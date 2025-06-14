@@ -300,16 +300,17 @@
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" required>
         </div>
+        
         <div class="form-group">
-  <label for="exam-code">Exam Code*</label>
-  <input 
-    type="text" 
-    id="exam-code" 
-    name="exam-code" 
-    placeholder="Enter your exam code" 
-    required
-  >
-</div>
+          <label for="exam-code">Exam Code*</label>
+          <input 
+            type="text" 
+            id="exam-code" 
+            name="exam-code" 
+            placeholder="Enter your exam code" 
+            required
+          >
+        </div>
         
         <div class="form-group">
           <label for="role">Applying for</label>
@@ -522,6 +523,7 @@
       if (!document.getElementById('name').value || 
           !document.getElementById('email').value || 
           !document.getElementById('phone').value || 
+          !document.getElementById('exam-code').value ||
           !document.getElementById('role').value) {
         alert('Please fill all fields');
         return;
@@ -532,6 +534,7 @@
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
+        examCode: document.getElementById('exam-code').value,
         role: document.getElementById('role').value,
         startTime: new Date().toISOString()
       };
