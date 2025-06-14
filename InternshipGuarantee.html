@@ -301,7 +301,7 @@
       <div class="card-content">
         <div class="badge">Guaranteed Internship</div>
                  <div class="title-price">
-      <h2 class="course-title">product management</h2>
+      <h2 class="course-title">Product Management</h2>
       <span class="course-price">₹4999</span>
     </div>
        
@@ -1671,5 +1671,12 @@ faqButtons.forEach(button => {
     }
   });
 });
+ document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.querySelector(".menu-btn");
+    const navList = document.querySelector(".nav-list");
 
+    menuBtn.addEventListener("click", function () {
+      navList.classList.toggle("active");
+    });
+  });
 </script>

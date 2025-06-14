@@ -92,7 +92,7 @@
 			<img src="3skilllogo.png">
 		</a>
 		<ul class="nav-list">
-			<li><a href="#home">Home</a></li>
+			<li><a href="profile.html">Login</a></li>
 			<li><a href="about.html" target="_blank">About</a></li>
 			<li><a href="#services">Services</a></li>
 			<li><a href="#courses">Courses</a></li>
@@ -1331,7 +1331,7 @@ Click below to start your test.
   </div>
 
   <div class="internship-image">
-    <img src="internship.gif" alt="Internship Guarantee GIF" />
+    <img src="Internship.gif" alt="Internship Guarantee GIF" />
   </div>
 </div>
 
@@ -2759,5 +2759,13 @@ function login() {
     window.location.href = "profile.html";
   }
 }
+ document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.querySelector(".menu-btn");
+    const navList = document.querySelector(".nav-list");
+
+    menuBtn.addEventListener("click", function () {
+      navList.classList.toggle("active");
+    });
+  });
 // Testimonials Section Ends
 </script>
