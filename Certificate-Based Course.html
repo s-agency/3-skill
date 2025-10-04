@@ -19,17 +19,7 @@
 </head>
 <body>
   <script>
-    document.addEventListener("contextmenu", function(e) {
-      e.preventDefault();
-      return false;
-    });
-
-    // Also disable common right-click shortcuts
-    document.addEventListener("keydown", function(e) {
-      if (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "s" || e.key === "S")) {
-        e.preventDefault();
-      }
-    });
+    document.addEventListener("contextmenu", function(e) {       e.preventDefault();       return false;     });      // Also disable common right-click shortcuts     document.addEventListener("keydown", function(e) {       if (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "s" || e.key === "S")) {         e.preventDefault();       }     });
   </script>
 <!--   *** Website Container Starts ***   -->
 <div class="website-container">
@@ -43,12 +33,14 @@
 		</a>
 		<ul class="nav-list">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html" target="_blank">About</a></li>
+			<li><a href="profile.html" target="_blank">Login</a></li>
 			<li><a href="3Skill_Internship_Guarantee_Course_Details.pdf" target="_blank">Courses</a></li>
 			<li><a href="dashbord.html" target="_blank">dashboard</a></li>
 			<li><a href="Certificate-Based Course.html" target="_blank">Internship</a></li>
 		</ul>
-		
+		<a href="profile.html" class="get-started-btn-container">
+			<button class="get-started-btn btn"> Student Login</button>
+		</a>
 		<div class="menu-btn">
 			<span></span>
 		</div>
@@ -58,15 +50,95 @@
 	<div class="banner">
 		
 		<div class="banner-desc">
-			<h2>Free<span> Internship</span> with Certificate & Learn From Home with <span>IIT Mentorship</span></h2>
+			<h2>Internship<span> Just @₹399</span> with Certificate & Learn From Home with <span>IIT Mentorship</span></h2>
       <h5>Build Real-World Projects, and <span>Master In-Demand Tech Skills</span>. This Internship Offers You a Hands-On Learning Experience, Industry Exposure, and a <span>Recognized Certificate to Boost Your Career.</span></h5>
          <br>
          
-			<div style="background-color:#f5e9e8; padding:15px; border-left:5px solid #4caf50; border-radius:8px; font-size:1.1rem;">
-  ✅ <strong> Certificate Included:</strong> Registration Fee ₹399 is only for certificate & slot
+			<div class="offer-box">
+   <span class="offer-title">Exclusive Offer</span>  
+  <span class="original-price">₹999</span>  
+  <span class="discount-price">₹399 Only</span>  
+  <span class="badge"> 60% OFF</span>
 </div>
-<a href="dashbord.html" class="btn-yellow">Students dashboard</a>
 
+<style>
+.offer-box {
+  background: linear-gradient(90deg,#d0f7d0,#ffffff,#d0f7d0);
+  border:2px solid #4caf50;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:500;
+  color:#222;
+  margin-top:12px;
+  display:inline-flex;
+  align-items:center;
+  animation:shake 1s infinite, glow 1.5s infinite alternate;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.offer-title { font-weight:700; color:#1b5e20; margin-left:4px; }
+
+.original-price { 
+  margin-left:6px; 
+  font-size:14px; 
+  font-weight:700; 
+  color:#d32f2f; 
+  position: relative;
+}
+
+/* Stylish strike-through */
+.original-price::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,#d32f2f,#ff5252);
+  transform: rotate(-5deg);
+  border-radius:1px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.2);
+}
+
+.discount-price { margin-left:6px; font-size:16px; font-weight:800; color:#2e7d32; }
+.badge { 
+  margin-left:8px; 
+  background:#2e7d32; 
+  color:#fff; 
+  padding:3px 6px; 
+  border-radius:5px; 
+  font-size:12px; 
+  font-weight:700;
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translate(0,0); }
+  25% { transform: translate(-2px,0) rotate(-0.5deg); }
+  50% { transform: translate(2px,0) rotate(0.5deg); }
+  75% { transform: translate(-2px,0) rotate(-0.5deg); }
+}
+
+@keyframes glow {
+  0% { box-shadow:0 0 8px rgba(46,125,50,0.5); }
+  50% { box-shadow:0 0 20px rgba(46,125,50,0.8); }
+  100% { box-shadow:0 0 12px rgba(46,125,50,0.6); }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width:480px) {
+  .offer-box { padding:6px 10px; font-size:12px; }
+  .original-price { font-size:12px; margin-left:4px; }
+  .discount-price { font-size:14px; margin-left:4px; }
+  .badge { font-size:11px; padding:2px 5px; margin-left:6px; }
+  .original-price::after { height:1.5px; transform: rotate(-5deg); }
+}
+</style>
+
+
+
+<a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="btn-yellow">Register Now</a>
 <br>
  
      </div>
@@ -105,11 +177,11 @@
   align-items: center;
   justify-content: center;
 
-  background: linear-gradient(90deg, #16a34a, #2563eb);
+  background: linear-gradient(90deg, #16a34a, #16a34a);
   color: #fff;
   text-decoration: none;
 
-  padding: 14px 32px;
+  padding: 12px 32px; 
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -313,10 +385,12 @@
    <a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="card" target="_blank">
     <img src="Data analysis-rafiki.png" alt="Data Science" />
     <div class="card-content">
- <div class="badge">Internship</div>      
-      <!-- Title and Price in Flex -->
+ <div class="badge">Internship</div>  
+
+      <!-- Data Analytics -->
+
       <div class="title-price">
-        <h2 class="course-title">Data analysis</h2>
+        <h2 class="course-title">Data Analytics</h2>
         <span class="course-price">₹399</span>
       </div>
 
@@ -331,6 +405,8 @@
       </div>
     </div>
   </a>
+      
+  <!-- Fullstack Development -->
 
     <a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="card" target="_blank">
       <img src="Website Creator-rafiki.png" alt="Full Stack" />
@@ -371,25 +447,8 @@
   </div>
 </a>
 
-<!-- E-Commerce Store Building (Shopify + Marketing) -->
-<a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="card" target="_blank" rel="noopener noreferrer">
-  <img src="Ecommerce web page-rafiki.png" alt="E-Commerce Store" />
-  <div class="card-content">
-     <div class="badge">Internship</div>
-    <div class="title-price">
-      <h2 class="course-title">E-Commerce Store Building</h2>
-      <span class="course-price">₹399</span>
-    </div>
-    <div class="details">⏱️ 1 months Internship</div>
-    <div class="details">🧠 Learn Shopify, Store Setup & Marketing</div>
-    <div class="details">🪪 Certificate on Completion</div>
-    <div class="details">🌐 Launch your online store</div>
-    <div class="apply-row">
-      <span>Free Internship</span>
-      <button class="apply-btn">Apply Now</button>
-    </div>
-  </div>
-</a>
+
+
 
 <!-- Frontend Developer Mastery -->
 <a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="card" target="_blank" rel="noopener noreferrer">
@@ -411,27 +470,99 @@
   </div>
 </a>
 
-<!-- Digital Marketing -->
-<a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="card" target="_blank" rel="noopener noreferrer">
-  <img src="Contact us-bro.png" alt="Digital Marketing" />
-  <div class="card-content">
-     <div class="badge">Internship</div>
-    <div class="title-price">
-      <h2 class="course-title">Digital Marketing</h2>
-      <span class="course-price">₹399</span>
-    </div>
-    <div class="details">⏱️ 1 month Internship</div>
-    <div class="details">🧠 Learn SEO, Ads, Content & Social Media</div>
-    <div class="details">🪪 Certificate on Completion</div>
-    <div class="details">🌐 Run real marketing campaigns</div>
-    <div class="apply-row">
-      <span>Free Internship</span>
-      <button class="apply-btn">Apply Now</button>
-    </div>
-  </div>
-</a>
+
+
 
   </div>
+   <section class="partner-section">
+  <h2>Our Passionate Intern Community Worldwide</h2>
+  <div class="logo-slider">
+    <div class="logo-track">
+      <!-- Logos repeated twice for infinite scroll -->
+      <div class="logo-slide"><img src="IMG_20241108_115047 - Manisha Sharma.jpg" alt="Odisha Rider"></div>
+      <div class="logo-slide"><img src="1a25610f-0b8f-41a5-85bd-86272c4b78c8 - Jaskirat Kaur.jpeg" alt="Nextute"></div>
+      <div class="logo-slide"><img src="Screenshot_2025-07-22-19-13-32-06_99c04817c0de5652397fc8b56c3b3817 - Manan Tyagi.jpg" alt="GoHerit"></div>
+      <div class="logo-slide"><img src="IMG-20250718-WA0051 - Avantika Gupta.jpg" alt="GoHerit"></div>
+	   <div class="logo-slide"><img src="0cdf7b32-d9dd-4b6f-b12b-3078efbea3c3 - Raghavendra Pimprale.jpeg" alt="7 Sodium"></div>
+       <div class="logo-slide"><img src="B612_20250627_145350_052 - Arpita Samal.jpg" alt="GoHerit"></div>
+        <div class="logo-slide"><img src="IMG_5182 - dhruv chib.jpeg" alt="GoHerit"></div>
+         <div class="logo-slide"><img src="IMG_20250723_101951 - Zeeshan Ahmad.jpg" alt="GoHerit"></div>
+      <div class="logo-slide"><img src="IMG_4884 - Neelam Urankar.png" alt="GoHerit"></div>
+      <div class="logo-slide"><img src="Picsart_25-07-13_01-47-57-252 - Asif Pathan.jpg" alt="7 Sodium"></div>
+       <div class="logo-slide"><img src="IMG-20240912-WA0001 - Sinchana V.G.jpg" alt="7 Sodium"></div>
+       <div class="logo-slide"><img src="IMG_20201121_135138_625 - Dharmik Gosai.jpg" alt="7 Sodium"></div>
+        <div class="logo-slide"><img src="IMG_20250605_210455 - Vishal Kumar.png" alt="7 Sodium"></div>
+         <div class="logo-slide"><img src="profile - Nisarga K.M..jpg" alt="7 Sodium"></div>
+          <div class="logo-slide"><img src="IMG-20250725-WA0015(1) - Bhumika Raikwar.jpg" alt="7 Sodium"></div>
+		   <div class="logo-slide"><img src="IMG-20220711-WA0002 - Lakshmi Shaji.jpg" alt="7 Sodium"></div>
+		    <div class="logo-slide"><img src="IMG-20250727-WA0008 - Chnu Dubey.jpg" alt="7 Sodium"></div>
+			 <div class="logo-slide"><img src="IMG-20250620-WA0071(1) - Akshat Dhangar.jpg" alt="7 Sodium"></div>
+			  <div class="logo-slide"><img src="Screenshot_2025-07-22-22-59-28-21_99c04817c0de5652397fc8b56c3b3817 - Aryan Gangrade.jpg" alt="7 Sodium"></div>
+			   <div class="logo-slide"><img src="pic_1 (1) - Devika Sharma.jpg" alt="7 Sodium"></div>
+			    <div class="logo-slide"><img src="Screenshot_2025-07-22-22-02-17-30_965bbf4d18d205f782c6b8409c5773a4 - Anurag Baranwal.jpg" alt="7 Sodium"></div>
+				 <div class="logo-slide"><img src="Screenshot_20250722-191649 - rahul sharma.png" alt="7 Sodium"></div>
+				  <div class="logo-slide"><img src="IMG_20250723_110445 - GAUTAM RAWAT.jpg" alt="7 Sodium"></div>
+				   <div class="logo-slide"><img src="IMG_20250722_180821 - Deboshree Chatterjee.jpg" alt="7 Sodium"></div>
+				    <div class="logo-slide"><img src="IMG_20250628_192058 - Hardik Panchal.jpg" alt="7 Sodium"></div>
+					 <div class="logo-slide"><img src="IMG_20250614_173936510 - Bhawana Bisht.jpg" alt="7 Sodium"></div>
+					
+					  
+							 
+      <!-- Repeat logos for smooth infinite loop -->
+      <!-- Repeat logos for smooth infinite loop -->
+      <!-- Repeat logos for smooth infinite loop -->
+      <!-- Repeat logos for smooth infinite loop -->
+	   
+      
+	  <!-- Repeat logos for smooth infinite loop -->
+     
+    </div>
+  </div>
+  <br>
+  <br>
+   <div class="logo-slider1">
+    <div class="logo-track1">
+      <!-- Logos repeated twice for infinite scroll -->
+     
+							   <div class="logo-slide"><img src="IMG-20250705-WA0001.jpg" alt="7 Sodium"></div>
+							    <div class="logo-slide"><img src="IMG-20250705-WA0004.jpg" alt="7 Sodium"></div>
+								 <div class="logo-slide"><img src="IMG-20250705-WA0007.jpg" alt="7 Sodium"></div>
+								  <div class="logo-slide"><img src="IMG-20250705-WA0019.jpg" alt="7 Sodium"></div>
+								   <div class="logo-slide"><img src="IMG-20250705-WA0020.jpg" alt="7 Sodium"></div>
+								    <div class="logo-slide"><img src="IMG-20250705-WA0021.jpg" alt="7 Sodium"></div>
+									 <div class="logo-slide"><img src="IMG-20250706-WA0027.jpg" alt="7 Sodium"></div>
+									  <div class="logo-slide"><img src="IMG-20250705-WA0005.jpg" alt="7 Sodium"></div>
+									   <div class="logo-slide"><img src="IMG-20250705-WA0013.jpg" alt="7 Sodium"></div>
+									   <div class="logo-slide"><img src="IMG-20250730-WA0003.jpg" alt="7 Sodium"></div>
+									   <div class="logo-slide"><img src="IMG_20240308_140324 - Shazia Aslam.jpg" alt="7 Sodium"></div>
+					   <div class="logo-slide"><img src="FullSizeRender - Shifa Ansari.jpeg" alt="7 Sodium"></div>
+					    <div class="logo-slide"><img src="file_000000003ac061f8bb0032e3cac01459 - Harsh Gangurde.png" alt="7 Sodium"></div>
+						 <div class="logo-slide"><img src="1681807166885 - MULKALA SUNIL KUMAR.jpg" alt="7 Sodium"></div>
+						  <div class="logo-slide"><img src="2981 - Druv Mahajan.jpeg" alt="7 Sodium"></div>
+						   <div class="logo-slide"><img src="2211 - Allamprabhu Konek.jpg" alt="7 Sodium"></div>
+						    <div class="logo-slide"><img src="0cdf7b32-d9dd-4b6f-b12b-3078efbea3c3 - Raghavendra Pimprale.jpeg" alt="7 Sodium"></div>
+							 <div class="logo-slide"><img src="IMG-20231130-WA0019 - Shivam Sharma.jpg" alt="7 Sodium"></div>
+							  <div class="logo-slide"><img src="IMG_20241108_115047 - Manisha Sharma.jpg" alt="7 Sodium"></div>
+									   <div class="logo-slide"><img src="IMG-20250705-WA0016.jpg" alt="7 Sodium"></div>
+									   <div class="logo-slide"><img src="IMG-20250705-WA0015.jpg" alt="7 Sodium"></div>
+									   <div class="logo-slide"><img src="IMG-20250705-WA0010.jpg" alt="7 Sodium"></div>
+									    <div class="logo-slide"><img src="IMG-20250705-WA0008.jpg" alt="7 Sodium"></div>
+										 <div class="logo-slide"><img src="IMG-20250705-WA0011.jpg" alt="7 Sodium"></div>
+										  <div class="logo-slide"><img src="IMG-20250705-WA0012.jpg" alt="7 Sodium"></div>
+										  <div class="logo-slide"><img src="purba.png" alt="7 Sodium"></div>
+										 
+      
+      <!-- Repeat logos for smooth infinite loop -->
+      <!-- Repeat logos for smooth infinite loop -->
+      <!-- Repeat logos for smooth infinite loop -->
+      <!-- Repeat logos for smooth infinite loop -->
+	   
+      
+	  <!-- Repeat logos for smooth infinite loop -->
+     
+    </div>
+  </div>
+</section>
  <style>
     .stats-container {
       display: flex;
@@ -638,95 +769,7 @@
 </div>
 
 
- <section class="partner-section">
-  <h2>Our Passionate Intern Community Worldwide</h2>
-  <div class="logo-slider">
-    <div class="logo-track">
-      <!-- Logos repeated twice for infinite scroll -->
-      <div class="logo-slide"><img src="IMG_20241108_115047 - Manisha Sharma.jpg" alt="Odisha Rider"></div>
-      <div class="logo-slide"><img src="1a25610f-0b8f-41a5-85bd-86272c4b78c8 - Jaskirat Kaur.jpeg" alt="Nextute"></div>
-      <div class="logo-slide"><img src="Screenshot_2025-07-22-19-13-32-06_99c04817c0de5652397fc8b56c3b3817 - Manan Tyagi.jpg" alt="GoHerit"></div>
-      <div class="logo-slide"><img src="IMG-20250718-WA0051 - Avantika Gupta.jpg" alt="GoHerit"></div>
-	   <div class="logo-slide"><img src="0cdf7b32-d9dd-4b6f-b12b-3078efbea3c3 - Raghavendra Pimprale.jpeg" alt="7 Sodium"></div>
-       <div class="logo-slide"><img src="B612_20250627_145350_052 - Arpita Samal.jpg" alt="GoHerit"></div>
-        <div class="logo-slide"><img src="IMG_5182 - dhruv chib.jpeg" alt="GoHerit"></div>
-         <div class="logo-slide"><img src="IMG_20250723_101951 - Zeeshan Ahmad.jpg" alt="GoHerit"></div>
-      <div class="logo-slide"><img src="IMG_4884 - Neelam Urankar.png" alt="GoHerit"></div>
-      <div class="logo-slide"><img src="Picsart_25-07-13_01-47-57-252 - Asif Pathan.jpg" alt="7 Sodium"></div>
-       <div class="logo-slide"><img src="IMG-20240912-WA0001 - Sinchana V.G.jpg" alt="7 Sodium"></div>
-       <div class="logo-slide"><img src="IMG_20201121_135138_625 - Dharmik Gosai.jpg" alt="7 Sodium"></div>
-        <div class="logo-slide"><img src="IMG_20250605_210455 - Vishal Kumar.png" alt="7 Sodium"></div>
-         <div class="logo-slide"><img src="profile - Nisarga K.M..jpg" alt="7 Sodium"></div>
-          <div class="logo-slide"><img src="IMG-20250725-WA0015(1) - Bhumika Raikwar.jpg" alt="7 Sodium"></div>
-		   <div class="logo-slide"><img src="IMG-20220711-WA0002 - Lakshmi Shaji.jpg" alt="7 Sodium"></div>
-		    <div class="logo-slide"><img src="IMG-20250727-WA0008 - Chnu Dubey.jpg" alt="7 Sodium"></div>
-			 <div class="logo-slide"><img src="IMG-20250620-WA0071(1) - Akshat Dhangar.jpg" alt="7 Sodium"></div>
-			  <div class="logo-slide"><img src="Screenshot_2025-07-22-22-59-28-21_99c04817c0de5652397fc8b56c3b3817 - Aryan Gangrade.jpg" alt="7 Sodium"></div>
-			   <div class="logo-slide"><img src="pic_1 (1) - Devika Sharma.jpg" alt="7 Sodium"></div>
-			    <div class="logo-slide"><img src="Screenshot_2025-07-22-22-02-17-30_965bbf4d18d205f782c6b8409c5773a4 - Anurag Baranwal.jpg" alt="7 Sodium"></div>
-				 <div class="logo-slide"><img src="Screenshot_20250722-191649 - rahul sharma.png" alt="7 Sodium"></div>
-				  <div class="logo-slide"><img src="IMG_20250723_110445 - GAUTAM RAWAT.jpg" alt="7 Sodium"></div>
-				   <div class="logo-slide"><img src="IMG_20250722_180821 - Deboshree Chatterjee.jpg" alt="7 Sodium"></div>
-				    <div class="logo-slide"><img src="IMG_20250628_192058 - Hardik Panchal.jpg" alt="7 Sodium"></div>
-					 <div class="logo-slide"><img src="IMG_20250614_173936510 - Bhawana Bisht.jpg" alt="7 Sodium"></div>
-					
-					  
-							 
-      <!-- Repeat logos for smooth infinite loop -->
-      <!-- Repeat logos for smooth infinite loop -->
-      <!-- Repeat logos for smooth infinite loop -->
-      <!-- Repeat logos for smooth infinite loop -->
-	   
-      
-	  <!-- Repeat logos for smooth infinite loop -->
-     
-    </div>
-  </div>
-  <br>
-  <br>
-   <div class="logo-slider1">
-    <div class="logo-track1">
-      <!-- Logos repeated twice for infinite scroll -->
-     
-							   <div class="logo-slide"><img src="IMG-20250705-WA0001.jpg" alt="7 Sodium"></div>
-							    <div class="logo-slide"><img src="IMG-20250705-WA0004.jpg" alt="7 Sodium"></div>
-								 <div class="logo-slide"><img src="IMG-20250705-WA0007.jpg" alt="7 Sodium"></div>
-								  <div class="logo-slide"><img src="IMG-20250705-WA0019.jpg" alt="7 Sodium"></div>
-								   <div class="logo-slide"><img src="IMG-20250705-WA0020.jpg" alt="7 Sodium"></div>
-								    <div class="logo-slide"><img src="IMG-20250705-WA0021.jpg" alt="7 Sodium"></div>
-									 <div class="logo-slide"><img src="IMG-20250706-WA0027.jpg" alt="7 Sodium"></div>
-									  <div class="logo-slide"><img src="IMG-20250705-WA0005.jpg" alt="7 Sodium"></div>
-									   <div class="logo-slide"><img src="IMG-20250705-WA0013.jpg" alt="7 Sodium"></div>
-									   <div class="logo-slide"><img src="IMG-20250730-WA0003.jpg" alt="7 Sodium"></div>
-									   <div class="logo-slide"><img src="IMG_20240308_140324 - Shazia Aslam.jpg" alt="7 Sodium"></div>
-					   <div class="logo-slide"><img src="FullSizeRender - Shifa Ansari.jpeg" alt="7 Sodium"></div>
-					    <div class="logo-slide"><img src="file_000000003ac061f8bb0032e3cac01459 - Harsh Gangurde.png" alt="7 Sodium"></div>
-						 <div class="logo-slide"><img src="1681807166885 - MULKALA SUNIL KUMAR.jpg" alt="7 Sodium"></div>
-						  <div class="logo-slide"><img src="2981 - Druv Mahajan.jpeg" alt="7 Sodium"></div>
-						   <div class="logo-slide"><img src="2211 - Allamprabhu Konek.jpg" alt="7 Sodium"></div>
-						    <div class="logo-slide"><img src="0cdf7b32-d9dd-4b6f-b12b-3078efbea3c3 - Raghavendra Pimprale.jpeg" alt="7 Sodium"></div>
-							 <div class="logo-slide"><img src="IMG-20231130-WA0019 - Shivam Sharma.jpg" alt="7 Sodium"></div>
-							  <div class="logo-slide"><img src="IMG_20241108_115047 - Manisha Sharma.jpg" alt="7 Sodium"></div>
-									   <div class="logo-slide"><img src="IMG-20250705-WA0016.jpg" alt="7 Sodium"></div>
-									   <div class="logo-slide"><img src="IMG-20250705-WA0015.jpg" alt="7 Sodium"></div>
-									   <div class="logo-slide"><img src="IMG-20250705-WA0010.jpg" alt="7 Sodium"></div>
-									    <div class="logo-slide"><img src="IMG-20250705-WA0008.jpg" alt="7 Sodium"></div>
-										 <div class="logo-slide"><img src="IMG-20250705-WA0011.jpg" alt="7 Sodium"></div>
-										  <div class="logo-slide"><img src="IMG-20250705-WA0012.jpg" alt="7 Sodium"></div>
-										  <div class="logo-slide"><img src="purba.png" alt="7 Sodium"></div>
-										 
-      
-      <!-- Repeat logos for smooth infinite loop -->
-      <!-- Repeat logos for smooth infinite loop -->
-      <!-- Repeat logos for smooth infinite loop -->
-      <!-- Repeat logos for smooth infinite loop -->
-	   
-      
-	  <!-- Repeat logos for smooth infinite loop -->
-     
-    </div>
-  </div>
-</section>
+ 
 <br>
 <br>
 
@@ -872,34 +915,7 @@
 	 
 	}
   </style>
-<section style="padding: 40px; background-color: #f9f9ff;">
-  <h2 style="text-align: center; font-size: 28px; font-weight: bold;">Professional Certification You Can Trust</h2>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 30px;">
-    
-    <!-- Left Side: Certificate -->
-    <div style="flex: 1 1 300px; max-width: 400px; text-align: center;">
-      <h3 style="font-size: 20px;">3Skill MSME-Recognized Certificate</h3>
-      <p style="color: #555;">
-        On successful course completion, you'll receive an elegant A4-sized Certificate issued by 3Skill, an MSME-recognized startup. The certificate includes your domain, duration, and is QR-verifiable.
-      </p>
-      <img src="Green and Yellow Modern School Certificate Portrait (6).png" alt="3Skill Certificate" style="width: 100%; max-width: 220px; height: auto; border: 1px solid #ccc; border-radius: 8px; margin-top: 10px;">
-    </div>
-
-    <!-- Right Side: Highlights -->
-    <div style="flex: 1 1 300px; max-width: 400px; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-      <h3 style="font-size: 20px;">Why Our Certificate Stands Out</h3>
-      <ul style="margin-top: 16px; padding-left: 18px; line-height: 1.8; color: #333;">
-        <li>✅ <strong>MSME Verified:</strong> Backed by a Govt. of India registration.</li>
-        <li>✅ <strong>Real-World Projects:</strong> Completed in collaboration with 5+ startups.</li>
-        <li>✅ <strong>Professional A4 Format:</strong> Perfect for printing or framing.</li>
-        <li>✅ <strong>Unique QR Code:</strong> Certificate authenticity verification.</li>
-        <li>✅ <strong>Freelance-Ready:</strong> Proven practical experience.</li>
-        <li>✅ <strong>Skill Breakdown:</strong> Tech stack, duration, and performance score.</li>
-      </ul>
-    </div>
-
-  </div>
   <br>
   <br>
   <br>
