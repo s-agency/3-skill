@@ -553,105 +553,148 @@ src="https://www.facebook.com/tr?id=1170166754982118&ev=PageView&noscript=1"
   }
 }
         /* Partner logos */
-        .partner-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+.partner-section {
+    padding: 50px 20px;
+    text-align: center;
+}
 
-        .partner-section h2 {
-            font-size: 28px;
-            color: #1a1a1a;
-            margin-bottom: 30px;
-        }
+.partner-section h2 {
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
 
-        .logo-slider,
-        .logo-slider1 {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
+.logo-slider,
+.logo-slider1 {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Prevent layout shifts and improve performance */
+    contain: layout paint style;
+}
 
-        .logo-track,
-        .logo-track1 {
-            display: flex;
-            width: max-content;
-            animation: scroll-left 35s linear infinite;
-        }
+.logo-track,
+.logo-track1 {
+    display: flex;
+    width: max-content;
+    /* Force GPU acceleration for smoother animation */
+    will-change: transform;
+    /* Prevent layout thrashing */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
 
-        .logo-track1 {
-            animation-direction: reverse;
-        }
+.logo-track {
+    animation: scroll-left 40s linear infinite;
+}
 
-        .logo-slide {
-            width: 130px;
-            height: 130px;
-            margin: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            flex-shrink: 0;
-            transition: transform 0.3s ease-in-out;
-            background: none;
-            box-shadow: none;
-        }
+.logo-track1 {
+    animation: scroll-left 40s linear infinite reverse;
+}
 
-        .logo-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+.logo-slide {
+    width: 130px;
+    height: 130px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
+    background: none;
+    box-shadow: none;
+    /* Improve image rendering performance */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
 
-        /* Gradient fade */
-        .fade {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 120px;
-            pointer-events: none;
-            z-index: 2;
-        }
+.logo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Optimize image rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+}
 
-        .fade-left {
-            left: 0;
-            background: linear-gradient(to right, white, transparent);
-        }
-        
-        .fade-collab {
-            left: 0;
-            background: linear-gradient(to right, white, transparent);
-        }
+/* Enhanced animation with proper infinite loop */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
-        .fade-right {
-            right: 0;
-            background: linear-gradient(to left, white, transparent);
-        }
+/* Gradient fade */
+.fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    pointer-events: none;
+    z-index: 2;
+}
 
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
+.fade-left {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
 
-        /* Mobile fade smaller */
-        @media (max-width: 768px) {
-            .fade {
-                width: 0px;
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .logo-slide {
-                width: 100px;
-                height: 100px;
-                margin: 0 10px;
-            }
-        }
+.fade-right {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .fade {
+        width: 60px; /* Reduced but still visible fade */
+    }
+    
+    .logo-slide {
+        width: 100px;
+        height: 100px;
+        margin: 0 15px; /* Slightly increased margin for better spacing */
+    }
+    
+    /* Slower animation on mobile for better performance */
+    .logo-track,
+    .logo-track1 {
+        animation-duration: 50s;
+    }
+}
+
+/* High-performance mobile fixes */
+@media (max-width: 480px) {
+    .logo-slide {
+        width: 90px;
+        height: 90px;
+        margin: 0 12px;
+    }
+    
+    .fade {
+        width: 40px;
+    }
+    
+    /* Even slower on very small devices */
+    .logo-track,
+    .logo-track1 {
+        animation-duration: 60s;
+    }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .logo-track,
+    .logo-track1 {
+        animation-duration: 120s;
+    }
+}
 
         /* Testimonials */
         .testimonial-section {
@@ -3232,13 +3275,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="contact-row">
                         <span>Phone</span>
                         <span>+91 6372105534</span>
+                        <span>+91 9114799765</span>
                     </div>
                     <div class="contact-row">
                         <span>Website</span>
-                        <span>3skill.shop</span>
+                        <span>3skill.in</span>
                     </div>
                     <div class="contact-row">
                         <span>Email</span>
+                        <span>help@3skill.in</span>
                         <span>3skill.contact@gmail.com</span>
                         <span>3skill.course@gmail.com</span>
                         <span>3skill.payment@gmail.com</span>
