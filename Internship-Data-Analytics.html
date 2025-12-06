@@ -222,12 +222,12 @@ src="https://www.facebook.com/tr?id=1170166754982118&ev=PageView&noscript=1"
       </div>
         
       <!-- Desktop Apply Button -->
-      <button onclick="window.location.href='https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800';"  class="mt-8 bg-yellow-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-300 transition w-full md:w-auto hidden md:block">
+      <button onclick="window.location.href='https://smartpay.easebuzz.in/179742/49d8699604a146caa25d6cabf4068f33';"  class="mt-8 bg-yellow-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-300 transition w-full md:w-auto hidden md:block">
         Apply Now
       </button>
 
       <!-- Mobile Apply Button in Content -->
-      <button onclick="window.location.href='https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800';" 
+      <button onclick="window.location.href='https://smartpay.easebuzz.in/179742/49d8699604a146caa25d6cabf4068f33';" 
         class="mobile-apply-btn bg-yellow-400 text-black font-semibold px-8 py-4 rounded-md hover:bg-yellow-300 transition text-lg">
    Apply Now - ₹499 Only (refundable)
 </button>
@@ -278,7 +278,7 @@ src="https://www.facebook.com/tr?id=1170166754982118&ev=PageView&noscript=1"
   </section>
 
   <!-- Floating Apply Button -->
-  <button onclick="window.location.href='https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800';" class="floating-apply-btn bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md hover:bg-yellow-300 transition shadow-lg md:px-8">
+  <button onclick="window.location.href='https://smartpay.easebuzz.in/179742/49d8699604a146caa25d6cabf4068f33';" class="floating-apply-btn bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md hover:bg-yellow-300 transition shadow-lg md:px-8">
     <span class="hidden md:inline">Tap For Apply Now</span>
     <span class="md:hidden">Apply Now - ₹499 (refundable)</span>
   </button>
@@ -328,7 +328,7 @@ src="https://www.facebook.com/tr?id=1170166754982118&ev=PageView&noscript=1"
     </div>
   </div>
 
-  <a href="https://smartpay.easebuzz.in/179742/81548564ffc746338b72af18fc1e3800" class="apply-btn">
+  <a href="https://smartpay.easebuzz.in/179742/49d8699604a146caa25d6cabf4068f33" class="apply-btn">
     Apply Now – Data Analytics
   </a>
 
@@ -1563,161 +1563,268 @@ body {
 </style>
 
 
-  <!-- FAQ Section -->
-  <section class="px-6 md:px-16 py-12 bg-white">
-  <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">3Skill 2-Month Internship – FAQs</h2>
-  <p class="text-gray-600 text-center mb-12">All you need to know about our internship, projects, benefits & certification.</p>
+ <style>
+  .faq-section {
+    padding: 80px 20px;
+    background: #fff;
+}
 
-  <div class="max-w-3xl mx-auto space-y-4">
+.faq-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-    <!-- FAQ Item Template -->
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>💡 What is the 2-Month Internship Program?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          It's a 2-month hybrid internship program by <b>3Skill</b>, where you'll spend <b>1 month learning</b> through guided training and <b>1 month working</b> on real-world projects with mentor support. 
-          The goal is to make you industry-ready with practical exposure.
-        </p>
-      </div>
+.faq-subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ---------- FAQ CONTAINER ---------- */
+.faq-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.faq-item {
+    border: 1px solid #bdbdbd;   /* darker visible grey */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #fff;
+}
+.faq-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #222;
+    padding: 18px;
+
+    display: flex;
+    justify-content: space-between; /* keeps arrow on right */
+    align-items: center;            /* vertically centers arrow */
+    cursor: pointer;
+    gap: 10px;
+}
+
+.faq-btn i {
+    font-size: 18px;
+    color: #333;   /* darker arrow */
+    margin-left: auto; /* forces arrow to the far right */
+}
+
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* ---------- CONTENT ---------- */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .4s ease;
+    background: white;
+}
+
+.faq-content p {
+    padding: 18px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    .faq-title {
+        font-size: 26px;
+    }
+    .faq-btn {
+        font-size: 16px;
+        padding: 16px;
+    }
+    .faq-content p {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+ </style>
+ <!-- FAQ Section -->
+<section class="faq-section">
+    <h2 class="faq-title">3Skill 2-Month Internship – FAQs</h2>
+    <p class="faq-subtitle">All you need to know about our internship, projects, benefits & certification.</p>
+
+    <div class="faq-container">
+
+        <!-- FAQ Item -->
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>💡 What is the 2-Month Internship Program?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>
+                    It's a 2-month hybrid internship program by <b>3Skill</b>, where you'll spend
+                    <b>1 month learning</b> and <b>1 month working</b> on real-world projects with mentor support.
+                    The goal is to make you industry-ready with practical exposure.
+                </p>
+            </div>
+        </div>
+
+        <!-- Repeat For All FAQs (Already Converted Same As Your Content) -->
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>👩‍💻 Who can join this internship?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>Any student, fresher, or beginner passionate about learning can join. No prior experience required.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>🌐 Which domains are available right now?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>
+                    • Web Development<br>
+                    • AI/ML<br>
+                    • Data Analytics<br>
+                    • Frontend Development<br><br>
+                    New domains are added every month.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>📅 How is the internship structured?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>
+                    <b>Month 1:</b> Learning + assignments<br>
+                    <b>Month 2:</b> Projects + mentor guidance
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>💼 Will I get job or paid internship opportunities?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>
+                    Yes! Top performers get <b>paid internships</b> and <b>job opportunities</b> + resume support.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>🌴 What are the travel and vacation benefits?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>
+                    Top interns get a chance for <b>free trips</b> to Goa, Manali & more.  
+                    3Skill covers stay + travel.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>💰 Is the internship free or paid?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>
+                    Internship is <b>100% free</b>.  
+                    Only ₹499 refundable slot booking (refunded after completion).
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>📚 Will I get learning materials?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>You will get free question sets, assignments, and project materials.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>🎓 Will I get a certificate?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>You’ll receive a <b>verifiable digital certificate</b> with unique ID.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>🧑‍🏫 Are sessions live or recorded?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>You'll get both recorded lessons + live doubt sessions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-btn">
+                <span>🚀 How do I apply?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+                <p>Apply on the 3Skill website & get your offer letter after verification.</p>
+            </div>
+        </div>
+
     </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>👩‍💻 Who can join this internship?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          Any student, fresher, or beginner passionate about learning and working on real projects can join. No prior experience required — mentors will guide you step-by-step.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>🌐 Which domains are available right now?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          Currently available domains:<br>
-          • Web Development<br>
-          • Artificial Intelligence & Machine Learning (AI/ML)<br>
-          • Data Analytics<br>
-          • Frontend Development<br><br>
-          New domains are added every month based on student demand.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>📅 How is the internship structured?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          <b>Month 1:</b> Learn through recorded + live mentor-led sessions with assignments.<br>
-          <b>Month 2:</b> Work on industry-level projects and build your portfolio. You'll also receive weekly reviews and improvement feedback from mentors.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>💼 Will I get job or paid internship opportunities after completion?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          Yes! Top-performing students are offered <b>paid internships</b> or <b>job opportunities</b> with 3Skill and our partner startups. 
-          You'll also receive free career guidance and resume-building support.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>🌴 What are the travel and vacation benefits?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          Selected interns will get a chance to join <b>free vacation trips</b> to destinations like Goa, Manali, and popular places near your state. 
-          <b>3Skill covers all travel & stay expenses</b> — you just need to participate and perform well during the internship.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>💰 Is the internship free or paid?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-         The internship itself is <b>100% free</b>. We only charge a small ₹499 slot-booking fee to ensure seriousness among participants.
-You’ll also get free question banks and study materials, and <b>the full ₹499 will be refunded after successful completion</b> as per simple terms and conditions.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>📚 Will I get learning materials and questions?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          Yes, you'll get <b>free question sets, assignments, and project materials</b> during your internship. All resources are provided by 3Skill mentors to make your learning journey smoother.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>🎓 Will I get a certificate after completion?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          Yes! After successful completion of training and project submission, you'll receive a <b>verifiable digital certificate</b> with a unique ID. 
-          You can showcase it on your LinkedIn profile or resume.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>🧑‍🏫 Are sessions live or recorded?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          You'll get a mix of <b>recorded video lessons</b> and <b>live doubt sessions</b>. 
-          This helps you learn flexibly while still having real mentor interaction and guidance.
-        </p>
-      </div>
-    </div>
-
-    <div class="border border-gray-200 rounded-lg overflow-hidden">
-      <button class="w-full text-left p-4 font-medium text-gray-800 flex justify-between items-center faq-btn">
-        <span>🚀 How do I apply for the internship?</span>
-        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-      </button>
-      <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 p-0 text-gray-600">
-        <p class="p-4">
-          You can apply directly through the 3Skill website. After verification, you'll receive your offer letter and access to the learning dashboard. 
-          Slots are limited — so early registration is recommended.
-        </p>
-      </div>
-    </div>
-
-  </div>
 </section>
+<script>
+  // FAQ Accordion JS
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".faq-btn");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector("i");
+
+            // Close others
+            document.querySelectorAll(".faq-content").forEach(c => {
+                if (c !== content) {
+                    c.style.maxHeight = null;
+                    c.previousElementSibling.querySelector("i").classList.remove("rotate-180");
+                }
+            });
+
+            // Toggle current
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.classList.remove("rotate-180");
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.classList.add("rotate-180");
+            }
+        });
+    });
+});
+</script>
  
   <!-- Footer -->
 <footer class="bg-[#0d2b57] text-white py-10 px-6 md:px-16">
