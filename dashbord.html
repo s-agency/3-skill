@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://3skill.in/" />
 
   <meta name="description" content="3Skill (3skill.in) is India's top EdTech platform for internships, courses, workshops, and hackathons. Founded by Satyajit Swain, we help students grow with practical skills, projects, and career opportunities.">
-  <meta name="keywords" content="3Skill, 3Skill , 3 Skills , 3SKILLS , 3skill ,  3skill.in, Satyajit Swain 3Skill, Ashok Chetri 3Skill, 3Skill internships, 3Skill courses, 3Skill hackathon, 3Skill edtech, 3Skill IIT, 3Skill workshops, 3Skill education platform">
+  <meta name="keywords" content="3Skill, 3Skill , 3 Skills , 3SKILLS , 3skill ,  3skill.in, Satyajit Swain 3Skill, 3Skill internships, 3Skill courses, 3Skill hackathon, 3Skill edtech, 3Skill IIT, 3Skill workshops, 3Skill education platform">
   <meta name="author" content="3Skill Team">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://3skill.in/">
@@ -1184,13 +1184,14 @@
                                     <div class="btn-subtext">Access recorded lectures</div>
                                 </a>
 
-                                <a href="dashbord-pre-record.html" target="_blank" class="dashboard-btn">
+                               <a href="dashbord-pre-record.html" target="_blank" class="dashboard-btn">
                                     <div class="btn-icon-container">
-                                        <i class="fas fa-film"></i>
+                                        <i class="fas fa-file-alt"></i>
                                     </div>
-                                    <div class="btn-text">Study Videos</div>
-                                    <div class="btn-subtext">Supplemental learning materials</div>
+                                    <div class="btn-text">Report Card</div>
+                                    <div class="btn-subtext">View your academic performance</div>
                                 </a>
+
 
                                 <a href="quiz1-3skillinternship.html" target="_blank" class="dashboard-btn">
                                     <div class="btn-icon-container">
@@ -1511,6 +1512,44 @@
                 });
             });
         });
+         // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
+
+
+    </script>
+    <script>
+  // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
     </script>
 </body>
 </html>

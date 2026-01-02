@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Official Student Performance Report</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Email Verification Section -->
+    <div id="verifySection" class="verification-wrapper">
+      <div class="verification-box">
+        <div class="verification-header">
+          <div class="header-content">
+            <!-- YAHAN APNA SEAL/LOGO DAALO -->
+            <div class="logo">
+              <!-- Option 1: Image tag se -->
+              <img src="download.png" alt="University Seal" class="custom-seal-image">
+              <!-- 
+                YA Phir Option 2: Text mein 
+                <i class="fas fa-university"></i>
+                <span>YOUR<br>UNIVERSITY</span>
+              -->
+            </div>
+            <div>
+              <h1>Student Academic Records</h1>
+              <h2>Performance Report System</h2>
+            </div>
+          </div>
+        </div>
+        
+        <div class="verification-body">
+          <div class="form-container">
+            <div class="form-header">
+              <h3><i class="fas fa-shield-alt"></i> Secure Access Portal</h3>
+              <p><b>Enter your registered email to access your official academic report</b></p>
+              <p><mark>This report will be accessible only after the completion of your internship. Until then, it will remain locked. The report will be visible one day before your internship ends.</mark></p>
+            </div>
+            
+            <div class="form-group">
+              <label for="emailInput">
+                <i class="fas fa-envelope"></i> Student Email Address
+              </label>
+              <input 
+                type="email" 
+                id="emailInput" 
+                placeholder="student.name@institution.edu"
+                class="email-input"
+              >
+            </div>
+            
+            <button onclick="verifyEmail()" class="verify-btn">
+              <i class="fas fa-file-contract"></i> Generate Report
+            </button>
+            
+            <div id="message" class="message-box"></div>
+          </div>
+          
+          <div class="info-panel">
+            <h4><i class="fas fa-info-circle"></i> Important Information</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Official academic document</li>
+              <li><i class="fas fa-check-circle"></i> No physical signature required</li>
+              <li><i class="fas fa-check-circle"></i> Valid for verification purposes</li>
+              <li><i class="fas fa-check-circle"></i> Electronically timestamped</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report Section -->
+    <div id="reportSection" class="report-wrapper hidden">
+      <div class="report-container">
+        
+        <!-- Report Controls -->
+        <div class="report-controls">
+          <div class="controls-left">
+            <button onclick="window.print()" class="control-btn print">
+              <i class="fas fa-print"></i> Print
+            </button>
+            <button onclick="downloadReport()" class="control-btn download">
+              <i class="fas fa-download"></i> Download
+            </button>
+          </div>
+          <div class="controls-right">
+            <button onclick="goBack()" class="control-btn back">
+              <i class="fas fa-redo"></i> New Report
+            </button>
+          </div>
+        </div>
+        
+        <!-- Compact Report Paper -->
+        <div class="report-paper">
+          
+          <!-- Report Header -->
+          <div class="report-header">
+            <div class="header-left">
+              <!-- YAHAN APNA SEAL DAALO -->
+              <div class="official-seal">
+                <!-- Option A: Image file se -->
+                <img src="download.png" alt="Official Seal" class="seal-img">
+                
+                <!-- Option B: Base64 encoded image -->
+                <!-- 
+                <img src="data:image/png;base64,YOUR_BASE64_CODE_HERE" alt="Seal">
+                -->
+                
+                <!-- Option C: SVG direct -->
+                <!--
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="#1a237e" stroke-width="2"/>
+                  <text x="50" y="40" text-anchor="middle" font-size="8">YOUR</text>
+                  <text x="50" y="52" text-anchor="middle" font-size="8">UNIVERSITY</text>
+                  <text x="50" y="64" text-anchor="middle" font-size="8">SEAL</text>
+                </svg>
+                -->
+              </div>
+            </div>
+            
+            <div class="header-center">
+              <h1>INTERNSHIP PERFORMANCE REPORT</h1>
+              <div class="subtitle">
+                <span>Official Internship Evaluation Record</span>
+                <span class="doc-id">ID: <span id="docId">SR-2024-0000</span></span>
+              </div>
+            </div>
+            
+            <div class="header-right">
+              <div class="issue-date">
+                <div class="date-label">ISSUE DATE</div>
+                <div class="date-value" id="issueDate">DD/MM/YYYY</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Rest of the report remains same -->
+          <div class="student-info">
+            <table class="compact-table">
+              <tr>
+                <td class="label"><strong>Student Name:</strong></td>
+                <td class="value" id="name">_________________</td>
+                <td class="label"><strong>Student ID:</strong></td>
+                <td class="value" id="studentId">USE-2024-XXXX</td>
+              </tr>
+              <tr>
+                <td class="label"><strong>Email Address:</strong></td>
+                <td class="value" colspan="3" id="email">_________________</td>
+              </tr>
+              <tr>
+                <td class="label"><strong>Academic Domain:</strong></td>
+                <td class="value" colspan="3" id="domain">_________________</td>
+              </tr>
+            </table>
+          </div>
+          
+          <!-- Performance Summary -->
+          <div class="performance-summary">
+            <h3><i class="fas fa-chart-line"></i> Performance Summary</h3>
+            
+            <div class="marks-grid">
+              <div class="mark-item">
+                <div class="mark-label">Final Exam</div>
+                <div class="mark-value" id="finalExam">0</div>
+                <div class="mark-max">/ 100</div>
+                <div class="mark-percent" id="finalPercent">0%</div>
+              </div>
+              
+              <div class="mark-item">
+                <div class="mark-label">Interview</div>
+                <div class="mark-value" id="interview">0</div>
+                <div class="mark-max">/ 50</div>
+                <div class="mark-percent" id="interviewPercent">0%</div>
+              </div>
+              
+              <div class="mark-item total">
+                <div class="mark-label">Total Score</div>
+                <div class="mark-value" id="totalMarks">0</div>
+                <div class="mark-max">/ 150</div>
+                <div class="mark-percent" id="totalPercent">0%</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Eligibility Status -->
+          <div class="eligibility-section">
+            <h3><i class="fas fa-clipboard-check"></i> Eligibility Status</h3>
+            
+            <div class="status-grid">
+              <div class="status-item">
+                <div class="status-icon">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="status-content">
+                  <div class="status-title">Certificate Eligibility</div>
+                  <div class="status-value" id="certificate">Pending</div>
+                </div>
+              </div>
+              
+              <div class="status-item">
+                <div class="status-icon">
+                  <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <div class="status-content">
+                  <div class="status-title">Refund Eligibility</div>
+                  <div class="status-value" id="refund">Pending</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Verification Footer -->
+          <div class="verification-footer">
+            <div class="signature-line"></div>
+            <div class="footer-content">
+              <div class="footer-left">
+                <div class="verification-stamp">
+                  <div class="stamp-text">VERIFIED</div>
+                  <div class="stamp-date">Date: <span id="signatureDate">__/__/____</span></div>
+                </div>
+              </div>
+              
+              <div class="footer-center">
+                <p><strong>Official Document:</strong> This report is system-generated and electronically verified.</p>
+                <p>No physical signature required for official use.</p>
+              </div>
+              
+              <div class="footer-right">
+                <img src="seal-3skill.png" alt="Official Seal" class="seal-img">
+                
+                <!-- Option B: Base64 encoded image -->
+                <!-- 
+                <img src="data:image/png;base64,YOUR_BASE64_CODE_HERE" alt="Seal">
+                -->
+                
+                <!-- Option C: SVG direct -->
+                <!--
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="#1a237e" stroke-width="2"/>
+                  <text x="50" y="40" text-anchor="middle" font-size="8">YOUR</text>
+                  <text x="50" y="52" text-anchor="middle" font-size="8">UNIVERSITY</text>
+                  <text x="50" y="64" text-anchor="middle" font-size="8">SEAL</text>
+                </svg>
+                -->
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Info -->
+        <div class="quick-info">
+          <p><i class="fas fa-lightbulb"></i> Tip: Use the Print button for best results. Report automatically fits to A4 size.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* style.css - Compact with Seal Support */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.4;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== VERIFICATION SECTION ===== */
+.verification-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.verification-header {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  color: white;
+  padding: 25px 30px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffd32a;
+  padding: 5px;
+}
+
+/* Apna seal image ke liye styling */
+.custom-seal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo i {
+  font-size: 35px;
+  color: #1a237e;
+}
+
+.logo span {
+  font-size: 11px;
+  color: #1a237e;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.header-content h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.header-content h2 {
+  font-size: 16px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.verification-body {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .verification-body {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.form-container {
+  padding-right: 20px;
+}
+
+.form-header {
+  margin-bottom: 25px;
+}
+
+.form-header h3 {
+  color: #1a237e;
+  font-size: 18px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: 'Georgia', serif;
+  transition: border-color 0.3s;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #1a237e;
+}
+
+.verify-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Georgia', serif;
+}
+
+.verify-btn:hover {
+  background: linear-gradient(135deg, #283593 0%, #1a237e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+}
+
+.message-box {
+  margin-top: 20px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  min-height: 45px;
+}
+
+/* Info Panel */
+.info-panel {
+  background: #f0f7ff;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 4px solid #1a237e;
+}
+
+.info-panel h4 {
+  color: #1a237e;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-panel ul {
+  list-style: none;
+}
+
+.info-panel li {
+  padding: 8px 0;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.info-panel li i {
+  color: #1a237e;
+}
+
+/* ===== COMPACT REPORT SECTION ===== */
+.report-wrapper {
+  padding: 20px 0;
+}
+
+.report-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.controls-left, .controls-right {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  font-family: 'Georgia', serif;
+}
+
+.control-btn.print {
+  background: #1a237e;
+  color: white;
+}
+
+.control-btn.download {
+  background: #27ae60;
+  color: white;
+}
+
+.control-btn.back {
+  background: #f8f9fa;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.report-paper {
+  background: white;
+  padding: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Compact Report Header */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1a237e;
+}
+
+.header-left, .header-right {
+  width: 120px;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.header-center h1 {
+  font-size: 22px;
+  color: #1a237e;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: #666;
+}
+
+.doc-id {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Official Seal Area */
+.official-seal {
+  width: 100px;
+  height: 100px;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: white;
+  padding: 5px;
+}
+
+/* Apni seal image ke liye */
+.seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.issue-date {
+  text-align: right;
+}
+
+.date-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.date-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a237e;
+}
+
+/* Student Information */
+.student-info {
+  margin: 25px 0;
+}
+
+.compact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compact-table tr {
+  border-bottom: 1px solid #eee;
+}
+
+.compact-table td {
+  padding: 10px 15px;
+}
+
+.compact-table .label {
+  width: 30%;
+  font-weight: 600;
+  color: #444;
+  background: #f8f9fa;
+}
+
+.compact-table .value {
+  color: #1a237e;
+  font-weight: 500;
+}
+
+/* Performance Summary */
+.performance-summary {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.performance-summary h3 {
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.mark-item {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: transform 0.3s;
+}
+
+.mark-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.mark-item.total {
+  background: #f0f7ff;
+  border-color: #1a237e;
+}
+
+.mark-label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.mark-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.mark-max {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.mark-percent {
+  font-size: 14px;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* Eligibility Section */
+.eligibility-section {
+  margin: 30px 0;
+}
+
+.eligibility-section h3 {
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.status-item {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s;
+}
+
+.status-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.status-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0f7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #1a237e;
+}
+
+.status-title {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.status-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+/* Verification Footer */
+.verification-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.signature-line {
+  width: 150px;
+  height: 1px;
+  background: #333;
+  margin: 0 auto 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-left, .footer-right {
+  width: 100px;
+}
+
+.footer-center {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-center p {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.verification-stamp {
+  background: #f0f7ff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #1a237e;
+  text-align: center;
+}
+
+.stamp-text {
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.stamp-date {
+  font-size: 11px;
+}
+
+.qr-placeholder {
+  text-align: center;
+  color: #1a237e;
+}
+
+.qr-placeholder i {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.quick-info {
+  background: #f0f7ff;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 13px;
+  color: #444;
+  border-left: 4px solid #1a237e;
+}
+
+.quick-info i {
+  color: #1a237e;
+  margin-right: 8px;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .report-controls,
+  .quick-info {
+    display: none;
+  }
+  
+  .report-paper {
+    box-shadow: none;
+    border: none;
+    padding: 20px;
+  }
+  
+  @page {
+    margin: 15mm;
+  }
+}
+</style>
+<script>
+    // script.js - Simple version
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxWNc75BDbefxIK--1xLx75Mu_sLpGZLnf-hbojBcYcKI3mOd1vZW0u0QZ5AC4yB7gkCg/exec";
+
+function verifyEmail() {
+  const email = document.getElementById("emailInput").value.trim();
+  const message = document.getElementById("message");
+
+  if (!email) {
+    message.innerText = "Please enter a valid email address.";
+    message.style.color = "#dc3545";
+    message.style.background = "#f8d7da";
+    return;
+  }
+
+  message.innerText = "Verifying credentials...";
+  message.style.color = "#1a237e";
+  message.style.background = "#e8f4fd";
+
+  fetch(`${SCRIPT_URL}?email=${encodeURIComponent(email)}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "not_found") {
+        message.innerText = "Student record not found. Please check your email.";
+        message.style.color = "#dc3545";
+        message.style.background = "#f8d7da";
+      } else {
+        // Hide verification, show report
+        document.getElementById("verifySection").style.display = "none";
+        document.getElementById("reportSection").classList.remove("hidden");
+        
+        // Populate student data
+        document.getElementById("name").innerText = data.name || "Not Available";
+        document.getElementById("email").innerText = data.email || email;
+        document.getElementById("domain").innerText = data.domain || "Not Specified";
+        
+        // Exam marks
+        const finalExam = data.finalExam || "0";
+        const interview = data.interview || "0";
+        
+        document.getElementById("finalExam").innerText = finalExam;
+        document.getElementById("interview").innerText = interview;
+        
+        // Calculate percentages
+        const finalPercent = Math.round((finalExam / 100) * 100);
+        const interviewPercent = Math.round((interview / 50) * 100);
+        const totalMarks = parseInt(finalExam) + parseInt(interview);
+        const totalPercent = Math.round((totalMarks / 150) * 100);
+        
+        document.getElementById("finalPercent").innerText = finalPercent + "%";
+        document.getElementById("interviewPercent").innerText = interviewPercent + "%";
+        document.getElementById("totalMarks").innerText = totalMarks;
+        document.getElementById("totalPercent").innerText = totalPercent + "%";
+        
+        // Eligibility status
+        const certStatus = data.certificate || "No";
+        const refundStatus = data.refund || "No";
+        
+        document.getElementById("certificate").innerText = certStatus;
+        document.getElementById("refund").innerText = refundStatus;
+        
+        // Color code eligibility
+        document.getElementById("certificate").style.color = certStatus.toLowerCase() === 'yes' ? "#27ae60" : "#dc3545";
+        document.getElementById("refund").style.color = refundStatus.toLowerCase() === 'yes' ? "#27ae60" : "#dc3545";
+        
+        // Generate IDs and dates
+        const now = new Date();
+        const reportId = "3Skill-" + now.getFullYear() + "-" + 
+                      String(now.getMonth() + 1).padStart(2, '0') +
+                      String(now.getDate()).padStart(2, '0') + "-" +
+                      Math.floor(1000 + Math.random() * 9000);
+        
+        document.getElementById("docId").innerText = reportId;
+        document.getElementById("issueDate").innerText = now.toLocaleDateString('en-GB');
+        document.getElementById("signatureDate").innerText = now.toLocaleDateString('en-GB');
+        
+        // Generate student ID
+        const studentId = "ID-" + now.getFullYear() + "-" + 
+                         (data.name ? data.name.substring(0, 3).toUpperCase() : "STU") + 
+                         Math.floor(100 + Math.random() * 900);
+        document.getElementById("studentId").innerText = studentId;
+        
+        // Success message
+        message.innerText = "✓ Verification successful. Generating report...";
+        message.style.color = "#27ae60";
+        message.style.background = "#d4edda";
+        
+        // Auto scroll to top
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 300);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      message.innerText = "Server error. Please try again.";
+      message.style.color = "#ff9800";
+      message.style.background = "#fff3cd";
+    });
+}
+
+function downloadReport() {
+  window.print();
+}
+
+function goBack() {
+  document.getElementById("verifySection").style.display = "block";
+  document.getElementById("reportSection").classList.add("hidden");
+  document.getElementById("emailInput").value = "";
+  document.getElementById("message").innerText = "";
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<script>
+  // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
