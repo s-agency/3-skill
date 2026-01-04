@@ -3,78 +3,134 @@
 <head>
 <meta charset="UTF-8" />
 <title>Schedule PDF</title>
+
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; }
-  h2 { margin-top: 40px; }
-  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f6f8;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 5px;
+  }
+
+  .subheader {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  th {
+    font-size: 15px;
+    letter-spacing: 0.3px;
+  }
+
+  tr:nth-child(even) td {
+    background: #fafafa;
+  }
+
+  /* SAME COLORS – NO CHANGE */
   .aiml th { background: #28a745; color: #fff; }
   .web th { background: #d11b66; color: #fff; }
   .data th { background: #0056d6; color: #fff; }
-  .subheader { font-weight: bold; margin-top: 5px; }
 </style>
 </head>
+
 <body>
+
 <h1>Training & Project Class Schedule</h1>
 
-<h2>AIML (Batch-1 & Batch-2)</h2>
+<!-- AI & ML -->
+<h2>AI & ML</h2>
 <p class="subheader">Timing: 7–8 PM</p>
+
 <table class="aiml">
-  <tr><th>Nov Batch (Project Classes)</th><th>Dec Batch (Training Classes)</th></tr>
-  <tr><td>6/12/25</td><td>5/12/25</td></tr>
-  <tr><td>9/12/25</td><td>8/12/25</td></tr>
-  <tr><td>11/12/25</td><td>10/12/25</td></tr>
-  <tr><td>13/12/25</td><td>12/12/25</td></tr>
-  <tr><td>16/12/25</td><td>15/12/25</td></tr>
-  <tr><td>18/12/25</td><td>17/12/25</td></tr>
-  <tr><td>20/12/25</td><td>19/12/25</td></tr>
-  <tr><td>23/12/25</td><td>22/12/25</td></tr>
-  <tr><td>26/12/25</td><td>26/12/25</td></tr>
-  <tr><td>29/12/25</td><td>29/12/25</td></tr>
-  <tr><td>2/1/26</td><td>2/1/26</td></tr>
-  <tr><td>4/1/26</td><td>4/1/26</td></tr>
+  <tr>
+    <th>AI & ML Batch-Jan (7-8pm)</th>
+    <th>AI & ML Batch-Dec (7-8pm)</th>
+  </tr>
+  <tr><td>5/01/26</td><td>6/01/26</td></tr>
+  <tr><td>7/01/26</td><td>8/01/26</td></tr>
+  <tr><td>9/01/26</td><td>10/01/26</td></tr>
+  <tr><td>12/01/26</td><td>13/01/26</td></tr>
+  <tr><td>14/01/26</td><td>15/01/26</td></tr>
+  <tr><td>17/01/26</td><td></td></tr>
+  <tr><td>20/01/26</td><td></td></tr>
+  <tr><td>24/01/26</td><td></td></tr>
+  <tr><td>27/01/26</td><td></td></tr>
+  <tr><td>30/01/26</td><td></td></tr>
+  <tr><td>2/02/26</td><td></td></tr>
+  <tr><td>4/02/26</td><td></td></tr>
 </table>
 
-<h2>Web Development (Frontend + Fullstack)</h2>
+<!-- WEB -->
+<h2>Frontend & Web Development</h2>
 <p class="subheader">Timing: 8–9 PM</p>
+
 <table class="web">
-  <tr><th>Nov Batch (Project Classes)</th><th>Dec Batch (Training Classes)</th></tr>
-  <tr><td>5/12/25</td><td>5/12/25</td></tr>
-  <tr><td>9/12/25</td><td>9/12/25</td></tr>
-  <tr><td>11/12/25</td><td>11/12/25</td></tr>
-  <tr><td>13/12/25</td><td>13/12/25</td></tr>
-  <tr><td>16/12/25</td><td>16/12/25</td></tr>
-  <tr><td>18/12/25</td><td>18/12/25</td></tr>
-  <tr><td>20/12/25</td><td>20/12/25</td></tr>
-  <tr><td>23/12/25</td><td>23/12/25</td></tr>
-  <tr><td>25/12/25</td><td>25/12/25</td></tr>
-  <tr><td>27/12/25</td><td>27/12/25</td></tr>
-  <tr><td>30/12/25</td><td>30/12/25</td></tr>
-  <tr><td>31/12/25</td><td>31/12/25</td></tr>
-  <tr><td>1/1/26</td><td>1/1/26</td></tr>
-  <tr><td>2/1/26</td><td>2/1/26</td></tr>
-  <tr><td>3/1/26</td><td>3/1/26</td></tr>
+  <tr>
+    <th>Batch-Jan (8-9pm)</th>
+    <th>Batch-Dec (8-9pm)</th>
+  </tr>
+  <tr><td>5/01/26</td><td>6/01/26</td></tr>
+  <tr><td>8/01/26</td><td>14/01/26</td></tr>
+  <tr><td>10/01/26</td><td>19/01/26</td></tr>
+  <tr><td>13/01/26</td><td>26/01/26</td></tr>
+  <tr><td>15/01/26</td><td>31/01/26</td></tr>
+  <tr><td>17/01/26</td><td></td></tr>
+  <tr><td>20/01/26</td><td></td></tr>
+  <tr><td>23/01/26</td><td></td></tr>
+  <tr><td>27/01/26</td><td></td></tr>
+  <tr><td>30/01/26</td><td></td></tr>
+  <tr><td>2/02/26</td><td></td></tr>
+  <tr><td>4/02/26</td><td></td></tr>
 </table>
 
+<!-- DATA -->
 <h2>Data Analytics</h2>
 <p class="subheader">Timing: 8–9 PM</p>
+
 <table class="data">
-  <tr><th>Nov Batch (Project Classes)</th><th>Dec Batch (Training Classes)</th></tr>
-  <tr><td>5/12/25</td><td>5/12/25</td></tr>
-  <tr><td>8/12/25</td><td>8/12/25</td></tr>
-  <tr><td>10/12/25</td><td>10/12/25</td></tr>
-  <tr><td>12/12/25</td><td>12/12/25</td></tr>
-  <tr><td>15/12/25</td><td>15/12/25</td></tr>
-  <tr><td>17/12/25</td><td>17/12/25</td></tr>
-  <tr><td>19/12/25</td><td>19/12/25</td></tr>
-  <tr><td>22/12/25</td><td>22/12/25</td></tr>
-  <tr><td>24/12/25</td><td>24/12/25</td></tr>
-  <tr><td>26/12/25</td><td>26/12/25</td></tr>
-  <tr><td>29/12/25</td><td>29/12/25</td></tr>
-  <tr><td>31/12/25</td><td>31/12/25</td></tr>
-  <tr><td>1/1/26</td><td>1/1/26</td></tr>
-  <tr><td>2/1/26</td><td>2/1/26</td></tr>
-  <tr><td>3/1/26</td><td>3/1/26</td></tr>
+  <tr>
+    <th>Batch-Jan (8-9pm)</th>
+    <th>Batch-Dec (8-9pm)</th>
+  </tr>
+  <tr><td>5/01/26</td><td>6/01/26</td></tr>
+  <tr><td>7/01/26</td><td>13/01/26</td></tr>
+  <tr><td>8/01/26</td><td>20/01/26</td></tr>
+  <tr><td>12/01/26</td><td>27/01/26</td></tr>
+  <tr><td>14/01/26</td><td>31/01/26</td></tr>
+  <tr><td>16/01/26</td><td></td></tr>
+  <tr><td>19/01/26</td><td></td></tr>
+  <tr><td>22/01/26</td><td></td></tr>
+  <tr><td>26/01/26</td><td></td></tr>
+  <tr><td>29/01/26</td><td></td></tr>
+  <tr><td>2/02/26</td><td></td></tr>
+  <tr><td>4/02/26</td><td></td></tr>
 </table>
 
 </body>
