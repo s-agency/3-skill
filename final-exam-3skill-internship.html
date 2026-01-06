@@ -522,7 +522,7 @@ select option {
 </style>
 <script>
     // ========== CONFIGURATION ==========
-const EXAM_DURATION = 30 * 60; // 20 minutes in seconds
+const EXAM_DURATION = 30 * 60; // 30 minutes in seconds
 // ⚠️ REPLACE THIS WITH YOUR ACTUAL WEB APP URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwT9b0-0c1dUBAynACELGGrhe9OHtvijPa1avPPBExrhFWSVnchdqT1yft1UrFBcZYx/exec';
 
@@ -562,7 +562,8 @@ function checkDeviceCompatibility() {
     return true;
 }
 
- // ========== QUESTION BANK ==========
+// ========== QUESTION BANK ==========
+   // ========== QUESTION BANK ==========
        const questionBank = {
             "Fullstack Development":[
   {q: "Which of the following correctly describes REST?", options: ["A stateful architecture", "A stateless web service style", "A session-based model", "A SOAP-based architecture"], correct: 1},
@@ -1091,12 +1092,19 @@ function triggerWarning(reason) {
     document.getElementById('warningCount').textContent = warningCount;
     document.getElementById('warningIndicator').style.display = 'block';
     
+    console.log(`Warning ${warningCount}: ${reason}`);
+    
+    // AUTO-SUBMIT AFTER 5 DETECTIONS - THIS IS THE MAIN CHANGE
+    if (warningCount >= 3) {
+        console.log("⚠️ 3 warnings reached. Auto-submitting exam...");
+        submitExam();
+        return;
+    }
+    
     // Show warning for 5 seconds
     setTimeout(() => {
         document.getElementById('warningIndicator').style.display = 'none';
     }, 5000);
-    
-    console.log(`Warning ${warningCount}: ${reason}`);
 }
 
 // ========== PROCTORING ==========
@@ -1277,4 +1285,23 @@ window.addEventListener('resize', function() {
         alert('Please use a desktop computer to take this exam. Mobile devices are not supported.');
     }
 });
+</script>
+<script>
+  // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
 </script>
