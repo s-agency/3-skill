@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '25851447994467663');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=25851447994467663&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYMHYKRD9W"></script>
 <script>
@@ -29,7 +46,7 @@
 
    <title>3Skill - India’s Leading EdTech Platform | 3skill.in</title>
   <meta name="description" content="3Skill (3skill.in) is India’s top EdTech platform for internships, courses, workshops, and hackathons. Founded by Satyajit Swain, we help students grow with practical skills, projects, and career opportunities.">
-  <meta name="keywords" content="3Skill, 3Skill , 3 Skills , 3SKILLS , 3skill ,  3skill.in, Satyajit Swain 3Skill, Ashok Chetri 3Skill, 3Skill internships, 3Skill courses, 3Skill hackathon, 3Skill edtech, 3Skill IIT, 3Skill workshops, 3Skill education platform">
+  <meta name="keywords" content="3Skill, 3Skill , 3 Skills , 3SKILLS , 3skill ,  3skill.in, Satyajit Swain 3Skill, 3Skill internships, 3Skill courses, 3Skill hackathon, 3Skill edtech, 3Skill IIT, 3Skill workshops, 3Skill education platform">
   <meta name="author" content="3Skill Team">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://3skill.in/">
@@ -4195,4 +4212,42 @@ const activeElem = function () {
 }
 
 addEventOnElem(window, "scroll", activeElem);
+ // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
+
+
+    </script>
+    <script>
+  // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
 </script>
