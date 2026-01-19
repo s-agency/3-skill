@@ -3679,3 +3679,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+<script>
+  // Disable Right Click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable Keyboard Shortcuts (like F12, Ctrl+Shift+I, Ctrl+U)
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
+   // Apply Now Button Click Handler
+    document.querySelectorAll('.floating-apply-btn, .mobile-apply-btn, .hidden.md\\:block').forEach(button => {
+      if (button.classList.contains('hidden')) return; // Skip hidden desktop button
+      
+      button.addEventListener('click', function() {
+        alert('Thank you for your interest! You will be redirected to the application form.');
+        // In a real implementation, you would redirect to the application page
+        // window.location.href = '/apply-now';
+      });
+    });
+</script>
